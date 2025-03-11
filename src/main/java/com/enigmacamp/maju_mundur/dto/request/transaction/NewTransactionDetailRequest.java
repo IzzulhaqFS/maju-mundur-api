@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class NewTransactionDetailRequest {
-    private String postId;
+    private String merchantId;
+    private String productId;
     private Integer quantity;
 }

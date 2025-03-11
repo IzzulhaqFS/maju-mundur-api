@@ -21,8 +21,12 @@ public class TransactionDetail {
     private Transaction transaction;
 
     @ManyToOne
-    @JoinColumn(name = "post_id")
-    private ProductPost productPost;
+    @JoinColumn(name = "merchant_id")
+    private Merchant merchant;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @Column(name = "quantity")
     private Integer quantity;
