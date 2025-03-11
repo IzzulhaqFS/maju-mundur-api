@@ -12,4 +12,5 @@ public interface CustomerService {
     List<CustomerResponse> getAll();
     CustomerResponse update(UpdateCustomerRequest request);
     void delete(String id);
+    void updatePoint(String id, Integer point);
 }

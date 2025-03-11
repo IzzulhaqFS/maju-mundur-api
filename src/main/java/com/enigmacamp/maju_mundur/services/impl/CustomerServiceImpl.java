@@ -66,6 +66,12 @@ public class CustomerServiceImpl implements CustomerService {
         customerRepository.delete(customer);
     }
 
+    @Override
+    public void updatePoint(String id, Integer point) {
+        Customer customer = getCustomer(id);
+        customerRepository.updatePoint(customer.getId(), point);
+    }
+
     private CustomerResponse getCustomerResponse(Customer customer) {
         return CustomerResponse.builder()
                 .id(customer.getId())

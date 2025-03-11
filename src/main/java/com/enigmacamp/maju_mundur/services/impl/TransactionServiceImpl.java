@@ -62,11 +62,13 @@ public class TransactionServiceImpl implements TransactionService {
         }).toList();
 
         transactionDetailService.createBulk(transactionDetails);
+        customerService.updatePoint(transaction.getCustomer().getId(), transaction.getCustomer().getPoint() + transactionDetails.size());
         transaction.setTransactionDetails(transactionDetails);
 
         List<TransactionDetailResponse> detailResponses = getTransactionDetailResponses(transactionDetails);
 
         Double totalPrice = getTotalPrice(detailResponses);
+
 
         return TransactionResponse.builder()
                 .id(transaction.getId())
