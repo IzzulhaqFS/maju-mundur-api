@@ -10,8 +10,6 @@ import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
-//    private final String SECRET_KEY = "qOPK8Mcg3NrjWv0Wbak8W2tEFHMabC2o";
-//    private final Long EXPIRATION_TIME = 86400000L;
     @Value("${maju-mundur.secretkey}")
     private String SECRET_KEY;
 
